@@ -1,0 +1,15 @@
+{
+  "name": "smashit-core",
+  "version": "1.0.0",
+  "description": "The backend for smashit.club",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node cli.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
+  }
+}
