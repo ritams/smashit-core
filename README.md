@@ -20,7 +20,8 @@ Restart your terminal or run `source ~/.zshrc` to update your PATH.
    ```bash
    cp env.example .env
    ```
-   Edit `.env` and set `PORT=3000` (or your preferred port).
+   Edit `.env` and set `PORT=3000` and `MONGODB_URI=mongodb://localhost:27017/smashit` (or your MongoDB URI).
+4. Ensure MongoDB is running locally (or use MongoDB Atlas).
 
 ## Usage
 - **Development** (with hot reload):
@@ -42,4 +43,6 @@ The server runs on `http://localhost:3000` (or the port in `.env`).
 - `index.js` - Entry point
 - `src/server.js` - Express server setup
 - `src/logger.js` - Logging module
+- `src/data/models/` - Mongoose models (User, Booking)
+- `src/data/repositories/` - Repository classes for data operations
 - `cli.js` - Test CLI
