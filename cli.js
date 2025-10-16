@@ -1,4 +1,7 @@
 import app from './src/server.js';
+import { createLogger } from './src/logger.js';
+
+const logger = createLogger('cli');
 
 const server = app.listen(0, () => {
   const port = server.address().port;
@@ -6,14 +9,14 @@ const server = app.listen(0, () => {
     .then(res => res.text())
     .then(text => {
       if (text === 'Hello from smashit-core!') {
-        console.log('Test passed: Server responds correctly');
+        logger.info('Test passed: Server responds correctly');
       } else {
-        console.log('Test failed: Unexpected response:', text);
+        logger.error(`Test failed: Unexpected response: ${text}`);
       }
       server.close();
     })
     .catch(err => {
-      console.error('Test error:', err);
+      logger.error(`Test error: ${err.message}`);
       server.close();
     });
 });

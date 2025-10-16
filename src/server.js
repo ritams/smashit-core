@@ -1,4 +1,7 @@
 import express from 'express';
+import { createLogger } from './logger.js';
+
+const logger = createLogger('server');
 
 const app = express();
 
@@ -11,6 +14,7 @@ app.use(express.json());
  * @param {Object} res - Express response object.
  */
 app.get('/', (req, res) => {
+  logger.info('Root endpoint accessed');
   res.send('Hello from smashit-core!');
 });
 
